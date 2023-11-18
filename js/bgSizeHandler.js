@@ -25,13 +25,13 @@ function setMainSize(){
     }
 }
 
-//backup plan if window size not set to max view
-setBodySize();
-//resize screen to 16:9
-setMainSize();
+function setBgSize(){
+    //backup plan if window size not set to max view
+    setBodySize();
+    //resize screen to 16:9
+    setMainSize();
+}
 
 //auto update when resize
-window.addEventListener('resize', setBodySize);
-window.addEventListener('resize', setMainSize);
-window.addEventListener('load', setBodySize);
-window.addEventListener('load', setMainSize);
+window.addEventListener('resize', setBgSize);
+window.addEventListener('load', setBgSize);
