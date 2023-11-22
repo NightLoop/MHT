@@ -1,3 +1,5 @@
+import timer from "./timer.js";
+
 function setBodySize(){
     document.body.style.height = `${window.innerHeight}px`;
     document.body.style.width = `${window.innerWidth}px`;
