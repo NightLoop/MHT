@@ -1,4 +1,4 @@
-function createTimer(hour,min,sec,updateFequancyInSec,callingFunction){
+export function createTimer(hour,min,sec,updateFequancyInSec,callingFunction){
     const currentTime = Date.now();
     const targetMillisec = timeToMillisec(hour,min,sec);
     const target = currentTime + targetMillisec;
@@ -19,5 +19,3 @@ function timeToMillisec(hour,min,sec){
     const time = ( hour * Math.pow( 60 , 2 ) + min * 60 + sec ) * 1000;
     return time;
 }
-
-export default { createTimer };

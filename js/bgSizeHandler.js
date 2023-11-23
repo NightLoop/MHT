@@ -1,8 +1,10 @@
-import timer from "./timer.js";
-
-function setBodySize(){
-    document.body.style.height = `${window.innerHeight}px`;
-    document.body.style.width = `${window.innerWidth}px`;
+function setBodySize(isHeightChange, isWidthChange){
+    if(isHeightChange){
+        document.body.style.height = `${window.innerHeight}px`;
+    }
+    if(isWidthChange){
+        document.body.style.width = `${window.innerWidth}px`;
+    }
 }
 
 function setMainSize(){
@@ -27,13 +29,34 @@ function setMainSize(){
     }
 }
 
-function setBgSize(){
-    //backup plan if window size not set to max view
-    setBodySize();
-    //resize screen to 16:9
+function updateBgSize(){
+    let isHeightChange = false;
+    let isWidthChange = false;
+
+    if(parseFloat(document.body.style.height) !== parseFloat(window.innerHeight)){
+        isHeightChange = true;
+        console.log("updating height");
+    }
+    if(parseFloat(document.body.style.width) !== parseFloat(window.innerWidth)){
+        isWidthChange = true;
+        console.log("updating width");
+
+    }
+
+    setBodySize(isHeightChange, isWidthChange);
     setMainSize();
 }
 
 //auto update when resize
-window.addEventListener('resize', setBgSize);
-window.addEventListener('load', setBgSize);
+function enableBgSizeEvent(){
+    window.addEventListener('resize', updateBgSize);
+    window.addEventListener('load', updateBgSize);
+}
+
+function initialBgSize(){
+    setBodySize(true, true);
+    setMainSize();
+    enableBgSizeEvent();
+}
+
+initialBgSize();
