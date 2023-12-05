@@ -2,6 +2,7 @@ import { createTimer } from "./timer.js"
 import { updatePage } from "./pageHandler.js"
 import { enableMainNav, disableMainNav } from "./mainNavBar.js";
 import { setToNewsPage } from "./page/news.js";
+import { pageManament } from "./pageHandler.js";
 
 async function initialPage(){
     let title = "Loading...";
@@ -9,7 +10,7 @@ async function initialPage(){
 
     const srcList = {
         "../pic/" : ["icon.ico", "icon.png"],
-        "../js/" : ["bgSizeHandler.js", "pageHandler.js", "timer.js"],
+        "../js/" : ["bgSizeHandler.js", "pageHandler.js", "timer.js", "dataStorage.js"],
         "../js/page/" : ["news.js"],
         "../css/" : ["background.css", "mainContainer.css", "util.css"]
     };
@@ -37,7 +38,7 @@ async function initialPage(){
     if(failLoad == 0){
         document.getElementById("main_container").style.display = "grid";
         enableMainNav();
-        setToNewsPage();
+        pageManament.callPage("news", "loadPage");
     }
 
 

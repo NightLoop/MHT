@@ -1,5 +1,4 @@
-import { setToMenuPage } from "./page/menu.js";
-import { setToNewsPage } from "./page/news.js";
+import { pageManament } from "./pageHandler.js";
 
 export function enableMainNav(){
     mainNavBtnHandler(true);
@@ -20,9 +19,9 @@ function mainNavBtnHandler(isEnable){
 }
 
 function iconBtnFunction(event){
-    setToNewsPage();
+    pageManament.callPage("news", "loadPage");
 }
 
 function menuBtnFunction(event){
-    setToMenuPage();
+    pageManament.callPage("menu", "loadPage");
 }
