@@ -12,7 +12,7 @@ async function initialPage(){
         "../pic/" : ["icon.ico", "icon.png"],
         "../js/" : ["bgSizeHandler.js", "pageHandler.js", "timer.js", "dataStorage.js"],
         "../js/page/" : ["news.js"],
-        "../css/" : ["background.css", "mainContainer.css", "util.css"]
+        "../css/" : ["background.css", "mainContainer.css", "util.css", "news.css", "menu.css"]
     };
 
     const compountedSrcList = [];
