@@ -4,58 +4,46 @@
     <!-- Basic meta setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A webpage with tools to aid your gameplay of meme heroes">
+    <meta name="description" content="A webpage contain tools for meme heroes">
     <meta name="robots" content="index">
     <meta name="author" content="nightloop">
     <meta name="keywords" content="memeheroes,memeheroes tool,memeheroes tools,memeheroes calculate,memeheroes calculator,memeheroes vita,memeheroes vitalia,memeheroes exp,memeheroes plan,memehero,memehero tool,memehero tools,memehero calculate,memehero calculator,memehero vita,memehero vitalia,memehero exp,memehero plan,meme heroes,meme heroes tool,meme heroes tools,meme heroes calculate,meme heroes calculator,meme heroes vita,meme heroes vitalia,meme heroes exp,meme heroes plan,meme hero,meme hero tool,meme hero tools,meme hero calculate,meme hero calculator,meme hero vita,meme hero vitalia,meme hero exp,meme hero plan">
 
     <!-- Open Graph and Twitter namespaces -->
     <meta property="og:title" content="Meme Heroes Tools">
-    <meta property="og:description" content="A webpage with tools to aid your gameplay of meme heroes">
-    <meta property="og:image" content="pic/icon.png">
+    <meta property="og:description" content="A webpage contain tools for meme heroes">
+    <meta property="og:image" content="img/png/icon.png">
     <meta property="twitter:title" content="Meme Heroes Tools">
-    <meta property="twitter:description" content="A webpage with tools to aid your gameplay of meme heroes">
-    <meta property="twitter:image" content="pic/icon.png">
+    <meta property="twitter:description" content="A webpage contain tools for meme heroes">
+    <meta property="twitter:image" content="img/png/icon.png">
 
     <!-- Title and Icon -->
     <title>Meme Heroes Tools</title>
-    <link rel="icon" href="pic/icon.ico?v1.0" type="image/x-icon">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/util.css">
-    <link rel="stylesheet" href="css/mainContainer.css">
-    <link rel="stylesheet" href="css/news.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="img/ico/icon.ico" type="image/x-icon">
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
+
+    <!-- Stylesheet -->
+
 
 </head>
 <body>
-    <main id="main_container">
+    <main id="main_container" class="unselectable">
         <div id="main_title_container">
-            <h1 id="main_title" class="unselectable" style="font-family: Agbalumo;">Title</h1>
+            <h1 id="main_title_text">Meme Heroes</h1>
         </div>
-        <div id="main_content_container" class="unselectable">
+        <div id="main_content_container">
+
         </div>
         <div id="main_nav_container">
-            <div id="main_nav_list">
-                <img id="main_nav_icon" src="pic/icon.png" alt="MHT Icon" draggable="false">
-                <h3 class="unselectable" style="font-family: Agbalumo;">Meme Heroes Tool v3.5</h3>
-                <a id="main_nav_menu_btn" class="unselectable"> ≡ </a>
-            </div>
+            <img id="main_nav_icon" src="img/png/icon.png" alt="MHT Icon" draggable="false">
+            <h3 id="main_nav_text">Meme Heroes Tool v3.5</h3>
+            <a id="main_nav_menu_btn"> ≡ </a>
         </div>
     </main>
 
     <!-- JS Script -->
-    <script src="js/bgSizeHandler.js"></script>
-    <script src="js/pageHandler.js" type="module"></script>
-    <script src="js/timer.js" type="module"></script>
-    <script src="js/mainNavBar.js" type="module"></script>
-    <script src="js/page/news.js" type="module"></script>
-    <script src="js/dataStorage.js" type="module"></script>
-    
-    <script src="js/initial.js" type="module"></script>
+    <script src="../js/initial.js" type="module"></script>
 </body>
 </html>

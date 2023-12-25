@@ -1,15 +1,22 @@
-function setBodySize(isHeightChange, isWidthChange){
+import {data_storage as ds} from "./dataStorage.js";
+
+//set background size to max screen
+function setBackgroundSize(isHeightChange, isWidthChange){
     if(isHeightChange){
         document.body.style.height = `${window.innerHeight}px`;
+        ds.winHeight = document.body.style.height;
     }
     if(isWidthChange){
         document.body.style.width = `${window.innerWidth}px`;
+        ds.winWidth = document.body.style.width;
     }
+    setWorkspaceSize();
 }
 
-function setMainSize(){
-    const height = parseFloat(document.body.style.height);
-    const width = parseFloat(document.body.style.width);
+//set workspace to 16:9
+function setWorkspaceSize(){
+    const height = parseFloat(ds.winHeight);
+    const width = parseFloat(ds.winWidth);
     const target = document.getElementById("main_container");
 
     target.style.minWidth = "320px";
@@ -29,34 +36,24 @@ function setMainSize(){
     }
 }
 
-function updateBgSize(){
+//compare is size modified
+function winSizeCheck(){
     let isHeightChange = false;
     let isWidthChange = false;
-
-    if(parseFloat(document.body.style.height) !== parseFloat(window.innerHeight)){
+    if(window.innerHeight !== ds.winHeight){
         isHeightChange = true;
-        console.log("updating height");
     }
-    if(parseFloat(document.body.style.width) !== parseFloat(window.innerWidth)){
+    if(window.innerWidth !== ds.winWidth){
         isWidthChange = true;
-        console.log("updating width");
-
     }
-
-    setBodySize(isHeightChange, isWidthChange);
-    setMainSize();
+    if(isHeightChange === true || isWidthChange === true){
+        setBackgroundSize(isHeightChange, isWidthChange);
+    }
+}
+//resize event
+function enableWinResizeEvent(){
+    window.addEventListener('resize', winSizeCheck);
+    window.addEventListener('load', winSizeCheck);
 }
 
-//auto update when resize
-function enableBgSizeEvent(){
-    window.addEventListener('resize', updateBgSize);
-    window.addEventListener('load', updateBgSize);
-}
-
-function initialBgSize(){
-    setBodySize(true, true);
-    setMainSize();
-    enableBgSizeEvent();
-}
-
-initialBgSize();
+export {winSizeCheck , enableWinResizeEvent};

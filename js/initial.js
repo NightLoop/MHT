@@ -1,47 +1,189 @@
-import { createTimer } from "./timer.js"
-import { updatePage } from "./pageHandler.js"
-import { enableMainNav, disableMainNav } from "./mainNavBar.js";
-import { setToNewsPage } from "./page/news.js";
-import { pageManament } from "./pageHandler.js";
+import { data_storage as ds } from "./dataStorage.js";
+import { setLang } from "./langHandler.js";
+import { winSizeCheck , enableWinResizeEvent as enableWinResize} from "./winSizeHandler.js";
 
-async function initialPage(){
-    let title = "Loading...";
-    let content = "";
-
-    const srcList = {
-        "../pic/" : ["icon.ico", "icon.png"],
-        "../js/" : ["bgSizeHandler.js", "pageHandler.js", "timer.js", "dataStorage.js"],
-        "../js/page/" : ["news.js"],
-        "../css/" : ["background.css", "mainContainer.css", "util.css", "news.css", "menu.css"]
-    };
-
-    const compountedSrcList = [];
-
-    for (const list in srcList){
-        for (const file of srcList[list]){
-            compountedSrcList.push(`${list}${file}`);
+async function initial(){
+    const {isLoadingSuccess , langData} = await loadFile();
+    
+    if (isLoadingSuccess === true){
+        if(langData !== null){
+            ds.langJSON = langData;
         }
-    }
+        winSizeCheck();
+        enableWinResize();
 
-    let failLoad = 0;
+        setLang(ds.lang);
 
-    for (const file of compountedSrcList){
-        const response = await fetch(file);
-        if(response.ok){
-            console.log(`${file.split("/")[2]} is loaded successfully`);
-        }else{
-            console.log(`${file.split("/")[2]} has failed to load`);
-            failLoad += 1;
-        }
+        document.getElementById("main_container").style.display = "grid";
+        document.getElementById("main_nav_icon").style.display = "block";
+        document.getElementById("main_nav_text").innerHTML = ds.selectedLangJSON["webTitle"];
+    }else{
+        window.location.href = "../404.html";
     }
     
-    if(failLoad == 0){
-        document.getElementById("main_container").style.display = "grid";
-        enableMainNav();
-        pageManament.callPage("news", "loadPage");
-    }
-
-
 }
 
-initialPage();
+async function loadFile(){
+    let isLoadingSuccess = false;
+    let failCount = 0;
+    let langFile = {};
+    const srcList = {
+        "../img" : {
+            "/ico/" : ["icon.ico"],
+            "/png/" : ["icon.png"],   
+        },
+        "../js" : {
+            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js"],
+        },
+        "../css" : {
+            "/" : ["default.css", "mainContainer.css"],
+        },
+        "../json" : {
+            "/" : ["lang.json"],
+        }
+    };
+
+    for (const src in srcList){
+        switch (src){
+            case "../img":
+                for(const subPath in srcList[src]){
+                    for(const filePath of srcList[src][subPath]){
+                        const result = await checkImg(list2Path(src, subPath, filePath));
+                        if (result === "error" || result === "failed"){
+                            failCount += 1;
+                        }
+                    }
+                
+                }
+                break;
+
+            case "../js":
+                for(const subPath in srcList[src]){
+                    for(const filePath of srcList[src][subPath]){
+                        const result = await loadScript(list2Path(src, subPath, filePath));
+                        if (result === "error" || result === "failed"){
+                            failCount += 1;
+                        }
+                    }
+                }
+                break;
+
+            case "../css":
+                for(const subPath in srcList[src]){
+                    for(const filePath of srcList[src][subPath]){
+                        const result = await loadCss(list2Path(src, subPath, filePath));
+                        if (result === "error" || result === "failed"){
+                            failCount += 1;
+                        }
+                    }
+                }
+                break;
+
+            case "../json":
+                for(const subPath in srcList[src]){
+                    for(const filePath of srcList[src][subPath]){
+                        const {result , data} = await loadJSON(list2Path(src, subPath, filePath));
+                        if (result === "error" || result === "failed"){
+                            failCount += 1;
+                        }
+                        langFile = data;
+                    }
+                }
+                break;
+
+            default:
+                console.log(`${src} not in list`);
+                failCount += 1;
+                break;
+        }
+    }
+
+    if(failCount === 0){
+        isLoadingSuccess = true;
+    }
+
+    return {isLoadingSuccess : isLoadingSuccess , langData : langFile};
+}
+
+async function checkImg(file){
+    try{
+        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        const responce = await fetch(file);
+        if(responce.ok){
+            console.log(`${file.split("/").pop()} successfully loaded`);
+            return "success";
+        }else{
+            console.log(`fail to load ${file.split("/").pop()}`);
+            return "failed";
+        }
+    }catch (error){
+        console.log(`${file.split("/").pop()} not found`);
+        return "error";
+    }
+}
+
+async function loadScript(file){
+    try{
+        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        const responce = await fetch(file);
+        if(responce.ok){
+            let script = document.createElement("script");
+            script.src = file;
+            script.type = "module";
+            document.body.appendChild(script);
+            console.log(`${file.split("/").pop()} successfully loaded`);
+            return "success";
+        }else{
+            console.log(`fail to load ${file.split("/").pop()}`);
+            return "failed";
+        }
+    }catch (error){
+        console.log(`${file.split("/").pop()} not found`);
+        return "error";
+    }
+}
+
+async function loadCss(file){
+    try{
+        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        const responce = await fetch(file);
+        if(responce.ok){
+            let css = document.createElement("link");
+            css.rel = "stylesheet";
+            css.href = file;
+            document.head.appendChild(css);
+            console.log(`${file.split("/").pop()} successfully loaded`);
+            return "success";
+        }else{
+            console.log(`fail to load ${file.split("/").pop()}`);
+            return "failed";
+        }
+    }catch(error){
+        console.log(`${file.split("/").pop()} not found`);
+        return "error";
+    }
+}
+
+async function loadJSON(file){
+    try{
+        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        const responce = await fetch(file);
+        if(responce.ok){
+            const resJson = await responce.json();
+            console.log(`${file.split("/").pop()} successfully loaded`);
+            return {result : "success" , data: resJson};
+        }else{
+            console.log(`fail to load ${file.split("/").pop()}`);
+            return {result : "failed" , data: null};
+        }
+    }catch(error){
+        console.log(`${file.split("/").pop()} not found`);
+        return {result : "error" , data: null};
+    }
+}
+
+function list2Path(header, subPath, filePath){
+    return (`${header}${subPath}${filePath}`);
+}
+
+initial();
