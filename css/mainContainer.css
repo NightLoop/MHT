@@ -1,7 +1,7 @@
 main{
     height: 100%;
     width: 100%;
-    display: none;
+    display: grid;
     grid-template-rows: repeat(20, 5%);
     gap: 0 0;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.300);
@@ -17,6 +17,8 @@ main{
 
 #main_content_container{
     grid-row: 4 / 18;
+    margin: 0 10px 0 10px;
+    display: grid;
 }
 
 #main_nav_container{
@@ -33,7 +35,6 @@ main{
     width: 100%;
     max-height: 100%;
     align-self: center;
-    display: none;
 }
 
 #main_nav_container > h3{

@@ -6,7 +6,7 @@ export const data_storage = {
     langJSON: [],
     selectedLangJSON: [],
 
-    currentPage: "news",
+    currentPage: "",
     previousPage: "",
 
     pf_exp_reduct: 0,
