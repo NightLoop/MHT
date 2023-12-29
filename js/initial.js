@@ -4,6 +4,7 @@ import { winSizeCheck , enableWinResizeEvent as enableWinResize} from "./winSize
 import fileCheck from "./fileChecker.js";
 import { enableMainNavBar } from "./navBar.js";
 import { changePage } from "./pageHandler.js";
+import { changeLang } from "./page/langHandler.js";
 
 async function initial(){
     const {isLoadingSuccess , langData} = await fileCheck;

@@ -1,4 +1,5 @@
 import { data_storage as ds} from "./dataStorage.js";
+import { changeLang } from "./page/langHandler.js";
 import { menuPage } from "./page/menu.js";
 import { newsPage } from "./page/news.js";
 
@@ -10,10 +11,10 @@ function pageRouting(){
         menu : function(){
             menuPage();
         },
-        profile: function() {
+        profile: function(){
             profilePage();
         },
-        about: function() {
+        about: function(){
             aboutPage();
         },
     }

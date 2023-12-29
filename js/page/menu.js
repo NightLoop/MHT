@@ -1,5 +1,6 @@
 import { data_storage as ds} from "../dataStorage.js";
 import { changePage, updatePage } from "../pageHandler.js";
+import { changeLang } from "./langHandler.js";
 
 export function menuPage(){
     const lang = ds.selectedLangJSON["menu"];
@@ -33,7 +34,7 @@ function enableMenuBtns(){
         changePage("vita_plan");
     });
     document.getElementById("lang_btn").addEventListener("click", () => {
-        changePage("lang");
+        changeLang();
     });
     document.getElementById("about_btn").addEventListener("click", () => {
         changePage("about");
