@@ -1,8 +1,8 @@
 import { data_storage as ds} from "../dataStorage.js";
 import { changePage, updatePage } from "../pageHandler.js";
 
-export function newsPage(){
-    const lang = ds.selectedLangJSON["newsPage"];
+function newsPage(){
+    const lang = ds.selectedLangJSON["news"];
 
     const content = `
                     <div id="news_content">
@@ -62,3 +62,5 @@ function enableNewsToMenuBtn(){
         changePage("menu");
     });
 }
+
+export {newsPage};

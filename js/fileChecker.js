@@ -9,7 +9,7 @@ async function loadFile(){
         },
         "../js" : {
             "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js"],
-            "/page/" : ["menu.js", "news.js", "profile.js", "langHandler.js"],
+            "/page/" : ["menu.js", "news.js", "profile.js", "langTypeHandler.js", "about.js"],
         },
         "../css" : {
             "/" : ["default.css", "mainContainer.css", "news.css", "menu.css"],

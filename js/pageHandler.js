@@ -1,7 +1,9 @@
 import { data_storage as ds} from "./dataStorage.js";
-import { changeLang } from "./page/langHandler.js";
+import { aboutPage } from "./page/about.js";
+import { changeLang } from "./page/langTypeHandler.js";
 import { menuPage } from "./page/menu.js";
 import { newsPage } from "./page/news.js";
+import { profilePage } from "./page/profile.js";
 
 function pageRouting(){
     const pageRoute = {

@@ -1,4 +1,5 @@
 import { data_storage as ds} from "../dataStorage.js";
+import { menuPage } from "./menu.js";
 
 export function changeLang(){
     const data = ds.langJSON;
@@ -15,5 +16,6 @@ export function changeLang(){
     ds.lang = typeList[currentLangIndex];
     ds.selectedLangJSON = ds.langJSON[ds.lang];
 
-    console.log(ds.lang);
+    menuPage();
+    document.getElementById("main_nav_text").innerHTML = ds.selectedLangJSON["webTitle"];
 }

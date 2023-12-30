@@ -1,4 +1,4 @@
-export const data_storage = {
+const data_storage = {
     winHeight: "0px",
     winWidth: "0px",
 
@@ -33,3 +33,5 @@ export const data_storage = {
     ma_tael_cost: 0,
     ma_cost_list: {},
 }
+
+export {data_storage};

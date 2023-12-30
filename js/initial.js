@@ -1,10 +1,9 @@
-import { data_storage as ds } from "./dataStorage.js";
+import { data_storage as ds} from "./dataStorage.js";
 import { setLang } from "./langHandler.js";
 import { winSizeCheck , enableWinResizeEvent as enableWinResize} from "./winSizeHandler.js";
 import fileCheck from "./fileChecker.js";
 import { enableMainNavBar } from "./navBar.js";
 import { changePage } from "./pageHandler.js";
-import { changeLang } from "./page/langHandler.js";
 
 async function initial(){
     const {isLoadingSuccess , langData} = await fileCheck;
@@ -19,6 +18,7 @@ async function initial(){
         setLang(ds.lang);
 
         document.body.style.display = "grid";
+
         document.getElementById("main_nav_text").innerHTML = ds.selectedLangJSON["webTitle"];
         enableMainNavBar();
         changePage("news");

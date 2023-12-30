@@ -1,7 +1,7 @@
 {
     "en" : {
         "webTitle" : "Meme Heroes Tool v3.5",
-        "newsPage" : {
+        "news" : {
             "title" : "News",
 
             "information1" : "Hi guys, this webpage is main to help you to have better experience in meme heroes with the tools provided.",
@@ -32,12 +32,22 @@
             "vitaPlanBtnText" : "Vitalia Planner",
             "langBtnText" : "Language",
             "aboutBtnText" : "About"
+        },
+        "profile" : {
+
+        },
+        "about" : {
+            "title" : "About",
+
+            "author" : "Night",
+            "mathSupport" : "Snowy",
+            "specialThanks" : "雪琪，喵喵的猫，尊不是蹲 and many more"
         }
     },
 
     "cn" : {
         "webTitle" : "暴走英雄坛工具 v3.5",
-        "newsPage" : {
+        "news" : {
             "title" : "公告",
 
             "information1" : "大家安安，欢迎来到暴走英雄坛工具网页，此网站提供了一些此游戏的计算工具。",
@@ -68,6 +78,16 @@
             "vitaPlanBtnText" : "真元模拟器",
             "langBtnText" : "语言",
             "aboutBtnText" : "关于"
+        },
+        "profile" : {
+
+        },
+        "about" : {
+            "title" : "关于",
+
+            "author" : "Night",
+            "mathSupport" : "Snowy",
+            "specialThanks" : "雪琪，喵喵的猫，尊不是蹲和其他的提供支持的小伙伴们"
         }
     }
 }

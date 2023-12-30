@@ -1,8 +1,8 @@
 import { data_storage as ds} from "../dataStorage.js";
 import { changePage, updatePage } from "../pageHandler.js";
-import { changeLang } from "./langHandler.js";
+import { changeLang } from "./langTypeHandler.js";
 
-export function menuPage(){
+function menuPage(){
     const lang = ds.selectedLangJSON["menu"];
 
     const content = `
@@ -40,3 +40,5 @@ function enableMenuBtns(){
         changePage("about");
     });
 }
+
+export {menuPage};
