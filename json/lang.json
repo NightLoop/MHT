@@ -34,7 +34,23 @@
             "aboutBtnText" : "About"
         },
         "profile" : {
-
+            "title" : "Profile",
+            
+            "ascExpText" : "Ascension Exp Cost :",
+            "ascLBText" : "Ascension Limit Break Time :",
+            "ascPracText" : "Ascension Practicing Speed :",
+            "bedText" : "Bed Training Speed :",
+            "innateText" : "Innate Power Level :",
+            "sectText" : "Sect Title :",
+            "vipText" : "Monthly VIP :",
+            "frostjadeText" : "Frostjade :",
+            "strText" : "Strength :",
+            "agiText" : "Agility :",
+            "conText" : "Constitution :",
+            "intText" : "Intelligence :",
+            "basicSpeedText" : "Basic Training Speed:",
+            "bonusText" : "Bonus Percentage :",
+            "finalSpedText" : "Final Training Speed" 
         },
         "about" : {
             "title" : "About",

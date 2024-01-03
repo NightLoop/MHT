@@ -8,11 +8,11 @@ async function loadFile(){
             "/png/" : ["icon.png"],   
         },
         "../js" : {
-            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js"],
+            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js"],
             "/page/" : ["menu.js", "news.js", "profile.js", "langTypeHandler.js", "about.js"],
         },
         "../css" : {
-            "/" : ["default.css", "mainContainer.css", "news.css", "menu.css"],
+            "/" : ["default.css", "mainContainer.css", "news.css", "menu.css", "profile.css"],
         },
         "../json" : {
             "/" : ["lang.json"],

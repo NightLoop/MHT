@@ -1,0 +1,49 @@
+#profile_content{
+    display: grid;
+    grid-template-rows: repeat(20, 5%);
+    text-align: justify;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#basic_setup_section{
+    grid-row: 1 / 9;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+.profile_setup_bar{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    height: 12.5%;
+    width: 100%;
+}
+
+.profile_setup_bar > p{
+    width: 80%;
+    align-self: center;
+    border-right: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+.profile_setup_bar > input{
+    width: 20%;
+    border: 0;
+    text-align: center;
+    outline: none;
+    background-color: transparent;
+}
+
+.profile_setup_bar > input:hover{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#stats_section{
+    grid-row: 9 / 14;
+}
+
+#bonus_section{
+    grid-row: 14 / 21;
+}
