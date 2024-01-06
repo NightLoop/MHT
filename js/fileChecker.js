@@ -8,7 +8,7 @@ async function loadFile(){
             "/png/" : ["icon.png"],   
         },
         "../js" : {
-            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js"],
+            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js"],
             "/page/" : ["menu.js", "news.js", "profile.js", "langTypeHandler.js", "about.js"],
         },
         "../css" : {
