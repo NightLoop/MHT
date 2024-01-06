@@ -8,7 +8,11 @@
     margin: 0;
 }
 
-#basic_setup_section{
+
+
+
+
+#profile_setup_section{
     grid-row: 1 / 9;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }
@@ -22,28 +26,103 @@
     width: 100%;
 }
 
-.profile_setup_bar > p{
+.profile_setup_bar > p:first-child{
     width: 80%;
+    padding: 0;
+    margin: 0;
     align-self: center;
-    border-right: 1.5px solid rgba(0, 0, 0, 0.300);
+    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
 }
 
-.profile_setup_bar > input{
+.profile_setup_input{
     width: 20%;
-    border: 0;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     outline: none;
-    background-color: transparent;
+    color: rgba(0, 0, 0, 0.300);
 }
 
-.profile_setup_bar > input:hover{
+.profile_setup_input:hover{
+    background-color: rgba(0, 0, 0, 0.050);
+    color: black;
+}
+
+
+
+
+
+#stats_setup_section{
+    grid-row: 9 / 14;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }
 
-#stats_section{
-    grid-row: 9 / 14;
+.stats_setup_bar{
+    height: 25%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
 }
+
+.stats_setup_bar > p:first-child{
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
+}
+
+.stats_setup_input{
+    width: 20%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    color: rgba(0, 0, 0, 0.300);
+}
+
+.stats_setup_input:hover{
+    background-color: rgba(0, 0, 0, 0.050);
+    color: black;
+}
+
+
+
 
 #bonus_section{
     grid-row: 14 / 21;
+}
+
+.bonus_bar{
+    height: 25%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.bonus_bar > p:first-child{
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
+}
+
+.bonus_section_display{
+    width: 20%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    color: rgba(0, 0, 0, 0.300);
 }
