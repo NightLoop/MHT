@@ -48,9 +48,9 @@
             "agiText" : "Agility :",
             "conText" : "Constitution :",
             "intText" : "Intelligence :",
-            "basicSpeedText" : "Basic Training Speed:",
+            "basicSpeedText" : "Basic Training Speed :",
             "bonusText" : "Bonus Percentage :",
-            "finalSpedText" : "Final Training Speed" 
+            "finalSpeedText" : "Final Training Speed :" 
         },
         "about" : {
             "title" : "About",
@@ -96,7 +96,23 @@
             "aboutBtnText" : "关于"
         },
         "profile" : {
-
+            "title" : "基础设置",
+            
+            "ascExpText" : "带脉潜能减免 :",
+            "ascLBText" : "带脉突破时间减免 :",
+            "ascPracText" : "带脉修炼速度加成 :",
+            "bedText" : "床速度加成 :",
+            "innateText" : "先天功等级 :",
+            "sectText" : "门派称号 :",
+            "vipText" : "月卡 :",
+            "frostjadeText" : "寒于髓 :",
+            "strText" : "臂力 :",
+            "agiText" : "身法 :",
+            "conText" : "根骨 :",
+            "intText" : "悟性 :",
+            "basicSpeedText" : "基础修炼速度:",
+            "bonusText" : "修炼加成 :",
+            "finalSpeedText" : "最终修炼速度 :" 
         },
         "about" : {
             "title" : "关于",
