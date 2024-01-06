@@ -13,6 +13,7 @@ const data_storage = {
     pf_lb_reduct: 0,
     pf_train_reduct: 0,
     pf_bed_speed: 0,
+    pf_innate: 0,
     pf_sect_title: false,
     pf_vip: false,
     pf_frostjade: false,
