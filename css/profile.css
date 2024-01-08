@@ -1,128 +1,30 @@
 #profile_content{
     display: grid;
-    grid-template-rows: repeat(20, 5%);
-    text-align: justify;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0;
-    margin: 0;
+    grid-template: 52.5% 25% 22.5% / 100%;
 }
 
+.profile_section_container{
+    display: grid;
+    align-items: center;
+    grid-auto-rows: minmax(0, 1fr);
+    grid-auto-flow: row;
+}
 
-
-
-
-#profile_setup_section{
-    grid-row: 1 / 9;
+.profile_section_container:nth-child(-n+2){
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }
 
-.profile_setup_bar{
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    height: 12.5%;
-    width: 100%;
+.profile_input_bar{
+    display: grid;
+    grid-template: 100% / 80% 20%;
 }
 
-.profile_setup_bar > p:first-child{
-    width: 80%;
-    padding: 0;
-    margin: 0;
-    align-self: center;
-    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
-}
-
-.profile_setup_input{
-    width: 20%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.valueDisplay{
+    text-align: center;
     outline: none;
     color: rgba(0, 0, 0, 0.300);
 }
 
-.profile_setup_input:hover{
-    background-color: rgba(0, 0, 0, 0.050);
-    color: black;
-}
-
-
-
-
-
-#stats_setup_section{
-    grid-row: 9 / 14;
+.valueDisplay:hover{
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
-}
-
-.stats_setup_bar{
-    height: 25%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.stats_setup_bar > p:first-child{
-    width: 80%;
-    padding: 0;
-    margin: 0;
-    align-self: center;
-    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
-}
-
-.stats_setup_input{
-    width: 20%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    color: rgba(0, 0, 0, 0.300);
-}
-
-.stats_setup_input:hover{
-    background-color: rgba(0, 0, 0, 0.050);
-    color: black;
-}
-
-
-
-
-#bonus_section{
-    grid-row: 14 / 21;
-}
-
-.bonus_bar{
-    height: 25%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-.bonus_bar > p:first-child{
-    width: 80%;
-    padding: 0;
-    margin: 0;
-    align-self: center;
-    border-right: 1.5px dotted rgba(0, 0, 0, 0.300);
-}
-
-.bonus_section_display{
-    width: 20%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    color: rgba(0, 0, 0, 0.300);
 }

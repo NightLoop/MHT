@@ -2,12 +2,14 @@
     display: grid;
     text-align: justify;
     overflow-y: scroll;
-    overflow-x: hidden;
+}
+
+#news_content > p{
+    padding: 0.5em 0;
 }
 
 #news_to_menu_btn{
     height: 50px;
-    width: 100%;
     display: grid;
     place-content: center;
 }
@@ -22,3 +24,4 @@
 #news_to_menu_btn > *:hover{
     box-shadow: 0 0 3px 2px grey;
 }
+

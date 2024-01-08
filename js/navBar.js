@@ -1,3 +1,4 @@
+import { data_storage } from "./dataStorage.js";
 import { changePage } from "./pageHandler.js";
 
 function enableMainNavBar(){
@@ -27,3 +28,9 @@ function menuBtnFunc(){
 }
 
 export {enableMainNavBar , disableMainNavBar};
+
+document.getElementById("main_nav_text").addEventListener("click", tester);
+
+function tester(){
+    console.log(data_storage);
+}

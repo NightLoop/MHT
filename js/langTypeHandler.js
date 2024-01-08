@@ -1,5 +1,5 @@
-import { data_storage as ds} from "../dataStorage.js";
-import { menuPage } from "./menu.js";
+import { data_storage as ds} from "./dataStorage.js";
+import { menuPage } from "./page/menu.js";
 
 export function changeLang(){
     const data = ds.langJSON;

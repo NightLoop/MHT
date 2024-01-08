@@ -35,4 +35,25 @@ const data_storage = {
     ma_cost_list: {},
 }
 
-export {data_storage};
+function uploadData(dataLocation, value){
+    const ds = data_storage;
+    try{
+        ds[dataLocation] = value;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+function uploadDataEventDistributor(className){
+    const targetList = document.querySelectorAll(className);
+
+    targetList.forEach(target => {
+        target.addEventListener("blur", function(){
+            const dataLocation = this.getAttribute("dataStorage");
+            const value = this.innerHTML;
+            uploadData(dataLocation, value);
+        })
+    })
+}
+
+export {data_storage, uploadData, uploadDataEventDistributor};

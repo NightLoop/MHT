@@ -1,6 +1,6 @@
 import { data_storage as ds} from "../dataStorage.js";
 import { changePage, updatePage } from "../pageHandler.js";
-import { changeLang } from "./langTypeHandler.js";
+import { changeLang } from "../langTypeHandler.js";
 
 function menuPage(){
     const lang = ds.selectedLangJSON["menu"];
