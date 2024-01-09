@@ -4,6 +4,9 @@ function setEditableText(className){
     targetList.forEach(target => {
         target.addEventListener("click", function(){
             this.contentEditable = true;
+            if(this.innerHTML === "0" || this.innerHTML === 0){
+                this.innerHTML = "";
+            }
             this.focus();
             this.style.color = "black";
         })
