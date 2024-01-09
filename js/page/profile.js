@@ -1,4 +1,4 @@
-import { tscEvent } from "../TSC.js";
+import { tscEvent } from "../tsc.js";
 import { data_storage as ds, uploadDataEventDistributor } from "../dataStorage.js";
 import { setBoolText, setEditableText } from "../editableText.js";
 import { setNumLimit } from "../numLimiter.js";
