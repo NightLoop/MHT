@@ -1,6 +1,6 @@
 import { data_storage as ds} from "./dataStorage.js";
 import { aboutPage } from "./page/about.js";
-import { changeLang } from "./langTypeHandler.js";
+import { costCalcPage } from "./page/costCalc.js";
 import { menuPage } from "./page/menu.js";
 import { newsPage } from "./page/news.js";
 import { profilePage } from "./page/profile.js";
@@ -10,11 +10,14 @@ function pageRouting(){
         news : function(){
             newsPage();
         },
-        menu : function(){
-            menuPage();
-        },
         profile: function(){
             profilePage();
+        },
+        cost_calc: function(){
+            costCalcPage();
+        },
+        menu : function(){
+            menuPage();
         },
         about: function(){
             aboutPage();
