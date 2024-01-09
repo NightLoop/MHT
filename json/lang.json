@@ -52,6 +52,13 @@
             "bonusText" : "Bonus Percentage :",
             "finalSpeedText" : "Final Training Speed :" 
         },
+        "costCalc" :{
+            "title" : "Exp Cost Calculator",
+
+            "maDiffText" : "Martial Art Difficulty :",
+            "startLevelText" : "Start Level :",
+            "endLevelText" : "End Level :"
+        },
         "about" : {
             "title" : "About",
 
