@@ -81,7 +81,7 @@ function profilePage(){
     
     updatePage(lang["title"],content);
     setEditableText(".editableField");
-    setNumLimit(".editableField");
+    setNumLimit(".editableField", "int");
     setBoolText(".boolField");
     uploadDataEventDistributor(".valueDisplay");
     tscEvent(".valueDisplay");
