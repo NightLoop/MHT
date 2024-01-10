@@ -57,7 +57,12 @@
 
             "maDiffText" : "Martial Art Difficulty :",
             "startLevelText" : "Start Level :",
-            "endLevelText" : "End Level :"
+            "endLevelText" : "End Level :",
+
+            "expCostText" : "Exp Cost :",
+            "practiceCostText" : "Practice Cost :",
+            "taelCostText" : "Tael Cost: ",
+            "timeCostText" : "Pratice Time Cost :"
         },
         "about" : {
             "title" : "About",
@@ -120,6 +125,18 @@
             "basicSpeedText" : "基础修炼速度:",
             "bonusText" : "修炼加成 :",
             "finalSpeedText" : "最终修炼速度 :" 
+        },
+        "costCalc" :{
+            "title" : "潜能计算器",
+
+            "maDiffText" : "武学难度 :",
+            "startLevelText" : "起始等级 :",
+            "endLevelText" : "目标等级 :",
+
+            "expCostText" : "潜能消耗 :",
+            "practiceCostText" : "修炼值 :",
+            "taelCostText" : "银两消耗 : ",
+            "timeCostText" : "修炼时长 :"
         },
         "about" : {
             "title" : "关于",

@@ -1,0 +1,57 @@
+#cost_calc_content{
+    display: grid;
+    grid-template: 50% 50% / 100%;
+}
+
+
+
+
+
+#cost_calc_panel{
+    display: grid;
+    grid-template: 16.5% 16.5% 16.5% 50.5% / 100%;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+.maInputBar{
+    display: grid;
+    grid-template: 100% / 60% 10% 20% 10%;
+    align-items: center;
+}
+
+.maInputDisplay{
+    outline: none;
+}
+
+.maInputBar > :nth-child(n+2):hover{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+.maInputBar > :nth-child(n+2),
+.costSummaryBar > :last-child{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.300);
+}
+
+#cost_summary_panel{
+    display: grid;
+    align-items: center;
+    grid-template: repeat(4 , 25%) / 100%;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+.costSummaryBar{
+    display: grid;
+    grid-template: 100% / 60% 40%;
+}
+
+
+
+
+
+
+
+
+#cost_list_panel{
+    display: grid;
+}
