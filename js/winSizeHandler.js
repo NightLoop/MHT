@@ -22,7 +22,7 @@ function setWorkspaceSize(){
     target.style.minWidth = "320px";
 
     //check is current aspect 16:9
-    if(Math.abs(height / width - 9 / 16) < 0.01){
+    if(Math.abs(height / width - 9 / 16) < 0){
         target.style.height = `${height}px`;
         target.style.width = `${width}px`;
     }else{
