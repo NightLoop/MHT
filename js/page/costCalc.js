@@ -1,3 +1,4 @@
+import { ccEvent } from "../cc.js";
 import { data_storage as ds, uploadDataEventDistributor } from "../dataStorage.js";
 import { setEditableText } from "../editableText.js";
 import { setNumLimit } from "../numLimiter.js";
@@ -30,19 +31,19 @@ function costCalcPage(){
                             <div id="cost_summary_panel">
                                 <div id="exp_cost_bar" class="costSummaryBar">
                                     <p>${lang["expCostText"]}</p>
-                                    <p>${ds.ma_exp_cost}</p>
+                                    <p id="ma_exp_cost_display">${ds.ma_exp_cost}</p>
                                 </div>
                                 <div id="practice_cost_bar" class="costSummaryBar">
                                     <p>${lang["practiceCostText"]}</p>
-                                    <p>${ds.ma_train_cost}</p>
+                                    <p id="ma_train_cost_display">${ds.ma_train_cost}</p>
                                 </div>
                                 <div id="tael_cost_bar" class="costSummaryBar">
                                     <p>${lang["taelCostText"]}</p>
-                                    <p>${ds.ma_tael_cost}</p>
+                                    <p id="ma_tael_cost_display">${ds.ma_tael_cost}</p>
                                 </div>
                                 <div id="time_cost_bar" class="costSummaryBar">
                                     <p>${lang["timeCostText"]}</p>
-                                    <p>${ds.ma_train_time}</p>
+                                    <p id="ma_train_time_display">${ds.ma_train_time}</p>
                                 </div>
                             </div>
                         </div>
@@ -57,6 +58,7 @@ function costCalcPage(){
     setNumLimit(".maIntInput", "int");
     setNumLimit(".maFloatInput", "float");
     uploadDataEventDistributor(".maInputDisplay");
+    ccEvent(".maInputDisplay");
 }
 
 export { costCalcPage };
