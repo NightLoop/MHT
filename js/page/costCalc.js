@@ -1,7 +1,8 @@
-import { ccEvent } from "../cc.js";
+import { ccEvent, initialCC } from "../cc.js";
 import { data_storage as ds, uploadDataEventDistributor } from "../dataStorage.js";
 import { setEditableText } from "../editableText.js";
 import { setNumLimit } from "../numLimiter.js";
+import { numBtnEventDistributor } from "../numberBtnHandler.js";
 import { updatePage } from "../pageHandler.js";
 
 function costCalcPage(){
@@ -12,21 +13,21 @@ function costCalcPage(){
                         <div id="cost_calc_panel">
                             <div id="ma_diff_bar" class="maInputBar">
                                 <p>${lang["maDiffText"]}</p>
-                                <a class="plusBtn"> + </a>
-                                <p class="maInputDisplay  maFloatInput" min="1" max="2" dataStorage="ma_diff">${ds.ma_diff}</p>
-                                <a class="minusBtn"> - </a>
+                                <a class="plusBtn" target="ma_diff" step="0.1"> + </a>
+                                <p id="ma_diff" class="maInputDisplay  maFloatInput" min="1" max="2" dataStorage="ma_diff">${ds.ma_diff}</p>
+                                <a class="minusBtn" target="ma_diff" step="0.1"> - </a>
                             </div>
                             <div id="start_level_bar" class="maInputBar">
                                 <p>${lang["startLevelText"]}</p>
-                                <a class="plusBtn"> + </a>
-                                <p class="maInputDisplay maIntInput" min="1" max="600" dataStorage="ma_start_level">${ds.ma_start_level}</p>
-                                <a class="minusBtn"> - </a>
+                                <a class="plusBtn" target="ma_start_level" step="1"> + </a>
+                                <p id="ma_start_level" class="maInputDisplay maIntInput" min="1" max="600" dataStorage="ma_start_level">${ds.ma_start_level}</p>
+                                <a class="minusBtn" target="ma_start_level" step="1"> - </a>
                             </div>
                             <div id="end_level_bar" class="maInputBar">
                                 <p>${lang["endLevelText"]}</p>
-                                <a class="plusBtn"> + </a>
-                                <p class="maInputDisplay  maIntInput" min="1" max="600" dataStorage="ma_end_level">${ds.ma_end_level}</p>
-                                <a class="minusBtn"> - </a>
+                                <a class="plusBtn" target="ma_end_level" step="1"> + </a>
+                                <p id="ma_end_level" class="maInputDisplay  maIntInput" min="1" max="600" dataStorage="ma_end_level">${ds.ma_end_level}</p>
+                                <a class="minusBtn" target="ma_end_level" step="1"> - </a>
                             </div>
                             <div id="cost_summary_panel">
                                 <div id="exp_cost_bar" class="costSummaryBar">
@@ -47,6 +48,18 @@ function costCalcPage(){
                                 </div>
                             </div>
                         </div>
+
+                        <div id="profile_stats_display">
+                            <div>
+                                <p>${ds.selectedLangJSON["profile"]["ascExpText"]}</p>
+                                <a>${ds.pf_exp_reduct}</a>
+                            </div>
+                            <div>
+                                <p>${ds.selectedLangJSON["profile"]["intText"]}</p>
+                                <a>${ds.pf_int}</a>
+                            </div>
+                        </div>
+
                         <div id="cost_list_panel">
 
                         </div>
@@ -59,6 +72,9 @@ function costCalcPage(){
     setNumLimit(".maFloatInput", "float");
     uploadDataEventDistributor(".maInputDisplay");
     ccEvent(".maInputDisplay");
+    numBtnEventDistributor(".plusBtn", true);
+    numBtnEventDistributor(".minusBtn", false);
+    initialCC();
 }
 
 export { costCalcPage };
