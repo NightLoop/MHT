@@ -25,9 +25,9 @@ const data_storage = {
     pf_speed_bonus: 0,
     pf_final_train_speed: 0,
 
-    ma_diff: 0,
-    ma_start_level: 0,
-    ma_end_level: 0,
+    ma_diff: 1,
+    ma_start_level: 1,
+    ma_end_level: 1,
     ma_exp_cost: 0,
     ma_train_cost: 0,
     ma_train_time:0,
