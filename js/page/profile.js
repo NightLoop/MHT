@@ -1,4 +1,4 @@
-import { tscEvent } from "../tsc.js";
+import { initialTsc, tscEvent } from "../tsc.js";
 import { data_storage as ds, uploadDataEventDistributor } from "../dataStorage.js";
 import { setBoolText, setEditableText } from "../editableText.js";
 import { setNumLimit } from "../numLimiter.js";
@@ -85,6 +85,7 @@ function profilePage(){
     setBoolText(".boolField");
     uploadDataEventDistributor(".valueDisplay");
     tscEvent(".valueDisplay");
+    initialTsc();
 }
 
 export {profilePage};
