@@ -1,6 +1,6 @@
 #cost_calc_content{
     display: grid;
-    grid-template: 50% 50% / 100%;
+    grid-template: 50% 5% 45% / 100%;
 }
 
 
@@ -47,6 +47,26 @@
 
 
 
+
+
+#profile_stats_display{
+    display: grid;
+    grid-template: 100% / 50% 50%;
+    align-items: center;
+    
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#profile_stats_display > div{
+    display: grid;
+    grid-template: 100% / 75% 25%;
+    color: rgba(0, 0, 0, 0.500);
+    font-size: 0.8rem;
+}
+
+#profile_stats_display > div > :last-child{
+    text-align: center;
+}
 
 
 
