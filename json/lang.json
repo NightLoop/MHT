@@ -62,7 +62,8 @@
             "expCostText" : "Exp Cost :",
             "practiceCostText" : "Practice Cost :",
             "taelCostText" : "Tael Cost: ",
-            "timeCostText" : "Pratice Time Cost :"
+
+            "totalExpCost" : "Total Exp Cost : "
         },
         "about" : {
             "title" : "About",
@@ -136,7 +137,8 @@
             "expCostText" : "潜能消耗 :",
             "practiceCostText" : "修炼值 :",
             "taelCostText" : "银两消耗 : ",
-            "timeCostText" : "修炼时长 :"
+
+            "totalExpCost" : "总消耗 : "
         },
         "about" : {
             "title" : "关于",
