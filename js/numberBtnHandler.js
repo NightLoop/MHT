@@ -26,18 +26,19 @@ function numberBtnHandler(isPlus, event){
 
 function numBtnEventDistributor(className, isPlus){
     const targetList = document.querySelectorAll(className);
-    let timerID;
 
     targetList.forEach(target => {
         target.addEventListener("mousedown", function(event){
-            const currentTarget = event;
-            if(!timerID){
-                timerID = setInterval(() => numBtnToggle(isPlus, currentTarget), 100);
-            }
+            toggleInterval(event, true, isPlus);
         });
-        target.addEventListener("mouseup", function(){
-            clearInterval(timerID);
-            timerID = null;
+        target.addEventListener("mouseup", function(event){
+            toggleInterval(event, false);
+        });
+        target.addEventListener("touchstart", function(event){
+            toggleInterval(event, true, isPlus);
+        });
+        target.addEventListener("touchend", function(event){
+            toggleInterval(event, false);
         });
     });
 }
@@ -45,6 +46,19 @@ function numBtnEventDistributor(className, isPlus){
 function numBtnToggle(isPlus, target){
     numberBtnHandler(isPlus, target);
     initialCC();
+}
+
+function toggleInterval(event, isStart, isPlus){
+
+    if(isStart === true){
+        numBtnToggle(isPlus, event);
+        if(ds.ma_intervalID === null){
+            ds.ma_intervalID = setInterval(() => numBtnToggle(isPlus, event), 100);
+        }
+    }else{
+        clearInterval(ds.ma_intervalID);
+        ds.ma_intervalID = null;
+    }
 }
 
 export { numBtnEventDistributor };
