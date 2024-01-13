@@ -1,6 +1,8 @@
 #cost_calc_content{
     display: grid;
-    grid-template: 50% 5% 45% / 100%;
+    min-height: 0;
+    min-width: 0;
+    grid-template: 45% 5% 45% 5% / 100%;
 }
 
 
@@ -36,7 +38,7 @@
 #cost_summary_panel{
     display: grid;
     align-items: center;
-    grid-template: repeat(4 , 25%) / 100%;
+    grid-template: repeat(3, calc(100% / 3)) / 100%;
     border-top: 1.5px solid rgba(0, 0, 0, 0.300);
 }
 
@@ -44,10 +46,6 @@
     display: grid;
     grid-template: 100% / 60% 40%;
 }
-
-
-
-
 
 #profile_stats_display{
     display: grid;
@@ -73,5 +71,103 @@
 
 
 #cost_list_panel{
-    display: grid;
+    min-width: 0;
+    overflow-y: scroll;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }
+
+#cost_list_panel > div :nth-child(1){
+    grid-area: a;
+}
+
+#cost_list_panel > div :nth-child(2){
+    grid-area: b;
+}
+
+#cost_list_panel > div :nth-child(3){
+    grid-area: c;
+}
+
+#cost_list_panel > div :nth-child(4){
+    grid-area: d;
+}
+
+#cost_list_panel > div :nth-child(5){
+    grid-area: e;
+}
+
+#cost_list_panel > div :nth-child(6){
+    grid-area: f;
+}
+
+#cost_list_panel > div :nth-child(7){
+    grid-area: g;
+}
+
+#cost_list_panel > div :nth-child(8){
+    grid-area: h;
+}
+
+#cost_list_panel > div :nth-child(9){
+    grid-area: i;
+}
+
+#cost_list_panel > div{
+    display: grid;
+    grid-template: 
+    "a b e e f i" 50%
+    "c d g g h h" 50% / 25% 10% 30% 10% 15% 10%;
+    color: rgba(0, 0, 0, 0.500);
+    font-size: 0.8rem;
+    align-items: center;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#cost_list_panel > div :nth-child(2n),
+#cost_list_panel > div :nth-child(9){
+    text-align: center;
+}
+
+
+
+#cost_list_display{
+    display: grid;
+    grid-template: 100% / 45% 10% 45%;
+}
+
+#cost_list_display > :nth-child(2){
+    max-height: 100%;
+    text-align: center;
+    align-self: center;
+    border-left: 1.5px solid rgba(0, 0, 0, 0.300);
+    border-right: 1.5px solid rgba(0, 0, 0, 0.300);
+    font-size: 20px;
+    background-color: #b99566;
+    z-index: 2;
+}
+
+#cost_list_display > div{
+    display: grid;
+    grid-template: 100% / 65% 30%;
+    color: rgba(0, 0, 0, 0.500);
+    font-size: 0.8rem;
+    align-items: center;
+    padding-left: 5%;
+    overflow: hidden;
+}
+
+#cost_list_display > div{
+    animation: move 15s linear infinite;
+    animation-direction: alternate;
+}
+
+#cost_list_display > div > :last-child{
+    text-align: center;
+}
+
+@keyframes move {
+    0%   { transform: translate( 12% , 0); }
+    100% { transform: translate(-120%, 0); }
+}
+
+

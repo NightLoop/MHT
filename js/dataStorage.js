@@ -30,9 +30,10 @@ const data_storage = {
     ma_end_level: 1,
     ma_exp_cost: 0,
     ma_train_cost: 0,
-    ma_train_time:0,
     ma_tael_cost: 0,
-    ma_cost_list: {},
+    ma_cost_list: [],
+    ma_cost_list_total_cost: 0,
+    ma_intervalID: null,
 }
 
 function uploadData(dataLocation, value){

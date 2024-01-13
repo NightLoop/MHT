@@ -42,26 +42,30 @@ function costCalcPage(){
                                     <p>${lang["taelCostText"]}</p>
                                     <p id="ma_tael_cost_display">${ds.ma_tael_cost}</p>
                                 </div>
-                                <div id="time_cost_bar" class="costSummaryBar">
-                                    <p>${lang["timeCostText"]}</p>
-                                    <p id="ma_train_time_display">${ds.ma_train_time}</p>
-                                </div>
                             </div>
                         </div>
 
                         <div id="profile_stats_display">
                             <div>
                                 <p>${ds.selectedLangJSON["profile"]["ascExpText"]}</p>
-                                <a>${ds.pf_exp_reduct}</a>
+                                <p>${ds.pf_exp_reduct}</p>
                             </div>
                             <div>
                                 <p>${ds.selectedLangJSON["profile"]["intText"]}</p>
-                                <a>${ds.pf_int}</a>
+                                <p>${ds.pf_int}</p>
                             </div>
                         </div>
 
                         <div id="cost_list_panel">
+                        </div>
 
+                        <div id="cost_list_display">
+                            <p></p>
+                            <p id="addTOListBtn">+</p>
+                            <div>
+                                <p>${lang.totalExpCost}</p>
+                                <p id="ma_list_total_cost">${ds.ma_cost_list_total_cost}</p>
+                            </div>
                         </div>
                     </div>
                     `;
@@ -74,7 +78,78 @@ function costCalcPage(){
     ccEvent(".maInputDisplay");
     numBtnEventDistributor(".plusBtn", true);
     numBtnEventDistributor(".minusBtn", false);
+    document.getElementById("addTOListBtn").addEventListener("click", addTOList);
+    document.getElementById("cost_list_panel").innerHTML = pushList2HTML();
+    updateTotalCost2HTML;
+    listRemoveBtnEvent();
     initialCC();
+}
+
+function addTOList(){
+    const startLevel = ds.ma_start_level;
+    const endLevel = ds.ma_end_level;
+    const diff = ds.ma_diff;
+    const expCost = ds.ma_exp_cost;
+
+    const listID = `ID${ds.ma_cost_list.length}`;
+
+    const content = `
+                    <div>
+                        <p>${ds.selectedLangJSON["costCalc"]["startLevelText"]}</p>
+                        <p>${startLevel}</p>
+                        <p>${ds.selectedLangJSON["costCalc"]["endLevelText"]}</p>
+                        <p>${endLevel}</p>
+                        <p>${ds.selectedLangJSON["costCalc"]["maDiffText"]}</p>
+                        <p>${diff}</p>
+                        <p>${ds.selectedLangJSON["costCalc"]["expCostText"]}</p>
+                        <p class="listIndividualCost">${expCost}</p>
+                        <a class="listRemoveBtn" listID="${listID}">-</a>
+                    </div>
+                    `;
+
+    ds.ma_cost_list.push({[listID] : content});
+    document.getElementById("cost_list_panel").innerHTML = pushList2HTML();
+    updateTotalCost2HTML();
+    listRemoveBtnEvent();
+}
+
+function listRemoveBtnEvent(){
+    const list = document.querySelectorAll(".listRemoveBtn");
+    
+    list.forEach(target => {
+        target.addEventListener("click", function(event){
+            const index = ds.ma_cost_list.findIndex(obj => event.target.getAttribute("listID") in obj);
+            if(index > -1){
+                ds.ma_cost_list.splice(index, 1);
+            }
+            event.target.parentElement.remove();
+            updateTotalCost2HTML();
+        });
+    });
+}
+
+function pushList2HTML(){
+    let htmlContent = "";
+
+    for (const listItem of ds.ma_cost_list){
+        for (const value in listItem){
+            htmlContent += listItem[value];
+        }
+    }
+
+    return htmlContent;
+}
+
+function updateTotalCost2HTML(){
+    let totalCost = 0;
+
+    const targetList = document.getElementsByClassName("listIndividualCost");
+    for (const target of targetList){
+        totalCost += parseFloat(target.innerHTML);
+    }
+
+    ds.ma_cost_list_total_cost = totalCost;
+    document.getElementById("ma_list_total_cost").innerHTML = ds.ma_cost_list_total_cost;
 }
 
 export { costCalcPage };
