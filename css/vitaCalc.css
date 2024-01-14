@@ -1,0 +1,48 @@
+#vita_calc_content{
+    display: grid;
+    min-height: 0;
+    min-width: 0;
+    grid-template: 90% 10% / 100%;
+}
+
+#vita_ma_section{
+    min-width: 0;
+    display: grid;
+    overflow-y: scroll;
+}
+
+#vita_ma_section > div{
+    display: grid;
+    grid-template: 30% 40% 30% / 100%;
+}
+
+#vita_ma_section > div > :first-child{
+    text-align: center;
+    align-self: center;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#vita_ma_section > div > :nth-child(2){
+    display: flex;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#vita_ma_section > div > :last-child{
+    display: grid;
+    grid-template: 100%/ 45% 10% 45%;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8em;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#vita_ma_section > div > :last-child > :nth-child(2){
+    background-color: rgba(185, 149, 102, 0.500);
+    border-left: 1.5px solid rgba(0, 0, 0, 0.300);
+    border-right: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#vita_ma_display{
+    display: grid;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.300);
+}

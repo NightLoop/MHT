@@ -143,7 +143,7 @@
     border-left: 1.5px solid rgba(0, 0, 0, 0.300);
     border-right: 1.5px solid rgba(0, 0, 0, 0.300);
     font-size: 20px;
-    background-color: #b99566;
+    background-color: rgba(185, 149, 102, 0.500);
 }
 
 #cost_list_display :nth-child(2n-1){

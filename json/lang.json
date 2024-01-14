@@ -69,7 +69,17 @@
             "totalExpCost" : "Total Exp Cost : "
         },
         "vitaCalc" :{
-            "title" : "Vitalia Calculator"
+            "title" : "Vitalia Calculator",
+
+            "totalVitaText" : "Total Vitalia : ",
+            "unarmedTitle" : "Unarmed",
+            "bladeTitle" : "Blade",
+            "swordTitle" : "Sword",
+            "staffTitle" : "Staff",
+            "whipTitle" : "Whip",
+            "throwTitle" : "Throwing Weapon",
+            "leviTitle" : "Levitation"
+
         },
         "about" : {
             "title" : "About",
@@ -150,7 +160,16 @@
             "totalExpCost" : "总消耗 : "
         },
         "vitaCalc" :{
-            "title" : "真元计算器"
+            "title" : "真元计算器",
+
+            "totalVitaText" : "总真元 : ",
+            "unarmedTitle" : "拳脚",
+            "bladeTitle" : "刀法",
+            "swordTitle" : "剑法",
+            "staffTitle" : "棍法",
+            "whipTitle" : "鞭法",
+            "throwTitle" : "暗器",
+            "leviTitle" : "轻功"
         },
         "about" : {
             "title" : "关于",

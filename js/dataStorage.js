@@ -34,6 +34,15 @@ const data_storage = {
     ma_cost_list: [],
     ma_cost_list_total_cost: 0,
     ma_intervalID: null,
+
+    vita_total_unarmed: 0,
+    vita_total_blade: 0,
+    vita_total_sword: 0,
+    vita_total_staff: 0,
+    vita_total_whip: 0,
+    vita_total_throw: 0,
+    vita_total_levi: 0,
+    vita_total_all: 0,
 }
 
 function uploadData(dataLocation, value){
