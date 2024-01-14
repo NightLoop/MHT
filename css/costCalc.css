@@ -110,6 +110,7 @@
 
 #cost_list_panel > div :nth-child(9){
     grid-area: i;
+    background-color: rgba(185, 149, 102, 0.500);
 }
 
 #cost_list_panel > div{

@@ -17,7 +17,8 @@ async function initial(){
 
         setLang(ds.lang);
 
-        document.body.style.display = "grid";
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("main_container").style.display = "grid";
 
         document.getElementById("main_nav_text").innerHTML = ds.selectedLangJSON["webTitle"];
         enableMainNavBar();
