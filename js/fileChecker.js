@@ -9,10 +9,10 @@ async function loadFile(){
         },
         "../js" : {
             "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js", "langTypeHandler.js", "tsc.js", "cc.js"],
-            "/page/" : ["menu.js", "news.js", "profile.js", "costCalc.js", "about.js"],
+            "/page/" : ["menu.js", "news.js", "profile.js", "costCalc.js", "about.js","vitaCalc.js"],
         },
         "../css" : {
-            "/" : ["default.css", "mainContainer.css", "news.css", "menu.css", "profile.css", "costCalc.css"],
+            "/" : ["default.css", "mainContainer.css", "news.css", "menu.css", "profile.css", "costCalc.css","vitaCalc.css"],
         },
         "../json" : {
             "/" : ["lang.json"],
