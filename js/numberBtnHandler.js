@@ -28,16 +28,10 @@ function numBtnEventDistributor(className, isPlus){
     const targetList = document.querySelectorAll(className);
 
     targetList.forEach(target => {
-        target.addEventListener("mousedown", function(event){
+        target.addEventListener("pointerdown", function(event){
             toggleInterval(event, true, isPlus);
         });
-        target.addEventListener("mouseup", function(event){
-            toggleInterval(event, false);
-        });
-        target.addEventListener("touchstart", function(event){
-            toggleInterval(event, true, isPlus);
-        });
-        target.addEventListener("touchend", function(event){
+        target.addEventListener("pointerup", function(event){
             toggleInterval(event, false);
         });
     });
@@ -51,8 +45,8 @@ function numBtnToggle(isPlus, target){
 function toggleInterval(event, isStart, isPlus){
 
     if(isStart === true){
-        numBtnToggle(isPlus, event);
         if(ds.ma_intervalID === null){
+            numBtnToggle(isPlus, event);
             ds.ma_intervalID = setInterval(() => numBtnToggle(isPlus, event), 100);
         }
     }else{
