@@ -4,6 +4,7 @@ import { costCalcPage } from "./page/costCalc.js";
 import { menuPage } from "./page/menu.js";
 import { newsPage } from "./page/news.js";
 import { profilePage } from "./page/profile.js";
+import { vitaCalcPage } from "./page/vitaCalc.js";
 
 function pageRouting(){
     const pageRoute = {
@@ -15,6 +16,9 @@ function pageRouting(){
         },
         cost_calc: function(){
             costCalcPage();
+        },
+        vita_calc: function(){
+            vitaCalcPage();
         },
         menu : function(){
             menuPage();

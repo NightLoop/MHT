@@ -1,6 +1,6 @@
 {
     "en" : {
-        "webTitle" : "Meme Heroes Tool v3.5",
+        "webTitle" : "Meme Heroes Tool v3.9",
         "news" : {
             "title" : "News",
 
@@ -10,6 +10,9 @@
             "menuBtnText" : "Menu",
             "updateListHeader" : "--------------------<br/><b>List of updates</b><br/>--------------------",
 
+            "v3.9b" : "Fixed exp calculator viewport bug",
+            "v3.8b" : "Remove vitalia calculator and vitalia planner to rework",
+            "v3.7b" : "Beta version on github, fixed exp calculator formula",
             "v3.5b" : "IMPORTANT!! on 19/11/2023, this webpage will be down again to shift the cloud service to github hosting.",
             "v3.1b" : "Rework on the whole UI and reimplement all the tools codes.",
             "v3.0b" : "Fixed bug which causing the webpage keep refresh, and planing to rework on the UI and reimplement background codes.",
@@ -65,6 +68,9 @@
 
             "totalExpCost" : "Total Exp Cost : "
         },
+        "vitaCalc" :{
+            "title" : "Vitalia Calculator"
+        },
         "about" : {
             "title" : "About",
 
@@ -75,7 +81,7 @@
     },
 
     "cn" : {
-        "webTitle" : "暴走英雄坛工具 v3.5",
+        "webTitle" : "暴走英雄坛工具 v3.9",
         "news" : {
             "title" : "公告",
 
@@ -85,7 +91,10 @@
             "menuBtnText" : "目录",
             "updateListHeader" : "--------------------<br/><b>历史版本更新简介</b><br/>--------------------",
 
-            "v3.5b" : "注意!! 从19/11/2023开始, 此网站将会下线直到网站成功移植到新平台。",
+            "v3.9b" : "修复潜能计算器视窗问题",
+            "v3.8b" : "移除真元计算器和真元模拟器",
+            "v3.7b" : "Github测试版， 修复潜能计算器BUG",
+            "v3.5b" : "注意!! 从19/11/2023开始,G 此网站将会下线直到网站成功移植到新平台。",
             "v3.1b" : "UI和底层代码更动。",
             "v3.0b" : "发现并修复了从BETA版本开始就出现的网页重复刷新问题，并着手编写新UI和更动底层代码。",
             "v2.5b" : "注意!! 从10/10/2023开始, 此网站的所有工具将会下线直到另行通知。",
@@ -139,6 +148,9 @@
             "taelCostText" : "银两消耗 : ",
 
             "totalExpCost" : "总消耗 : "
+        },
+        "vitaCalc" :{
+            "title" : "真元计算器"
         },
         "about" : {
             "title" : "关于",
