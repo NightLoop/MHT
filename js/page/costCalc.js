@@ -60,12 +60,9 @@ function costCalcPage(){
                         </div>
 
                         <div id="cost_list_display">
-                            <p></p>
+                            <p>${lang.totalExpCost}</p>
                             <p id="addTOListBtn">+</p>
-                            <div>
-                                <p>${lang.totalExpCost}</p>
-                                <p id="ma_list_total_cost">${ds.ma_cost_list_total_cost}</p>
-                            </div>
+                            <p id="ma_list_total_cost">${ds.ma_cost_list_total_cost}</p>
                         </div>
                     </div>
                     `;
