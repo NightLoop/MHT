@@ -20,13 +20,13 @@ function costCalcPage(){
                             <div id="start_level_bar" class="maInputBar">
                                 <p>${lang["startLevelText"]}</p>
                                 <a class="plusBtn" target="ma_start_level" step="1"> + </a>
-                                <p id="ma_start_level" class="maInputDisplay maIntInput" min="1" max="600" dataStorage="ma_start_level">${ds.ma_start_level}</p>
+                                <p id="ma_start_level" class="maInputDisplay maIntInput" min="1" max="599" dataStorage="ma_start_level">${ds.ma_start_level}</p>
                                 <a class="minusBtn" target="ma_start_level" step="1"> - </a>
                             </div>
                             <div id="end_level_bar" class="maInputBar">
                                 <p>${lang["endLevelText"]}</p>
                                 <a class="plusBtn" target="ma_end_level" step="1"> + </a>
-                                <p id="ma_end_level" class="maInputDisplay  maIntInput" min="1" max="600" dataStorage="ma_end_level">${ds.ma_end_level}</p>
+                                <p id="ma_end_level" class="maInputDisplay  maIntInput" min="2" max="600" dataStorage="ma_end_level">${ds.ma_end_level}</p>
                                 <a class="minusBtn" target="ma_end_level" step="1"> - </a>
                             </div>
                             <div id="cost_summary_panel">
@@ -75,6 +75,10 @@ function costCalcPage(){
     ccEvent(".maInputDisplay");
     numBtnEventDistributor(".plusBtn", true);
     numBtnEventDistributor(".minusBtn", false);
+    endLevelCorrectionBtnEvent(".plusBtn");
+    endLevelCorrectionBtnEvent(".minusBtn");
+    document.getElementById("ma_start_level").addEventListener("blur", endLevelCorrection);
+    document.getElementById("ma_end_level").addEventListener("blur", endLevelCorrection);
     document.getElementById("addTOListBtn").addEventListener("click", addTOList);
     document.getElementById("cost_list_panel").innerHTML = pushList2HTML();
     updateTotalCost2HTML;
@@ -147,6 +151,22 @@ function updateTotalCost2HTML(){
 
     ds.ma_cost_list_total_cost = totalCost;
     document.getElementById("ma_list_total_cost").innerHTML = ds.ma_cost_list_total_cost;
+}
+
+function endLevelCorrection(){
+    if(ds.ma_end_level <= ds.ma_start_level){
+        ds.ma_end_level = parseFloat(ds.ma_start_level) + 1;
+        document.getElementById("ma_end_level").innerHTML = ds.ma_end_level;
+        initialCC();
+    }
+}
+
+function endLevelCorrectionBtnEvent(className){
+    const targetList = document.querySelectorAll(className);
+
+    targetList.forEach(target => {
+        target.addEventListener("click", endLevelCorrection);
+    })
 }
 
 export { costCalcPage };

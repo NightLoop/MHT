@@ -54,11 +54,11 @@ function profilePage(){
                             </div>
                             <div class="stats_setup_bar profile_input_bar">
                                 <p>${lang["conText"]}</p>
-                                <p id="con" class="stats_setup_input valueDisplay editableField" min="0" max="300" dataStorage="pf_con">${ds.pf_con}</p>
+                                <p id="con" class="stats_setup_input valueDisplay editableField" min="10" max="300" dataStorage="pf_con">${ds.pf_con}</p>
                             </div>
                             <div class="stats_setup_bar profile_input_bar">
                                 <p>${lang["intText"]}</p>
-                                <p id="int" class="stats_setup_input valueDisplay editableField" min="0" max="300" dataStorage="pf_int">${ds.pf_int}</p>
+                                <p id="int" class="stats_setup_input valueDisplay editableField" min="10" max="300" dataStorage="pf_int">${ds.pf_int}</p>
                             </div>
                         </div>
                         
