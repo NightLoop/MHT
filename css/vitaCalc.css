@@ -19,6 +19,7 @@
 #vita_ma_section > div > :first-child{
     text-align: center;
     align-self: center;
+    background-color: rgba(185, 149, 102, 0.750);
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }
 
@@ -37,7 +38,7 @@
 }
 
 #vita_ma_section > div > :last-child > :nth-child(2){
-    background-color: rgba(185, 149, 102, 0.500);
+    background-color: rgba(185, 149, 102, 0.250);
     border-left: 1.5px solid rgba(0, 0, 0, 0.300);
     border-right: 1.5px solid rgba(0, 0, 0, 0.300);
 }
@@ -45,4 +46,19 @@
 #vita_ma_display{
     display: grid;
     border-top: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+
+
+#ma_selection_panel{
+    width: 75%;
+    height: 50%;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    background-color: #FFF7DF;
+    border: 1.5px solid #b99566;
 }

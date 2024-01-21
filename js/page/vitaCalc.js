@@ -1,5 +1,6 @@
 import { data_storage as ds} from "../dataStorage.js";
 import { updatePage } from "../pageHandler.js";
+import { vitaPanel } from "../vitaMaPanel.js";
 
 function vitaCalcPage(){
     const lang = ds.selectedLangJSON["vitaCalc"];
@@ -12,7 +13,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_unarmed_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_unarmed}</p>
                                 </div>
                             </div>
@@ -21,7 +22,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_blade_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_blade}</p>
                                 </div>
                             </div>
@@ -30,7 +31,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_sword_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_sword}</p>
                                 </div>
                             </div>
@@ -39,7 +40,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_staff_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_staff}</p>
                                 </div>
                             </div>
@@ -48,7 +49,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_whip_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_whip}</p>
                                 </div>
                             </div>
@@ -57,7 +58,7 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_throw_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_throw}</p>
                                 </div>
                             </div>
@@ -66,17 +67,29 @@ function vitaCalcPage(){
                                 <div></div>
                                 <div>
                                     <p>${lang["totalVitaText"]}</p>
-                                    <p>+</p>
+                                    <p id="vita_levi_btn" class="vitaMaAddBtn">+</p>
                                     <p>${ds.vita_total_levi}</p>
                                 </div>
                             </div>
                         </div>
                         <div id="vita_ma_display">
                         </div>
+                        <div id="ma_selection_panel">
+                        </div>
                     </div>
                     `;
 
     updatePage(lang["title"], content);
+    vitaPanelEvent(".vitaMaAddBtn");
+}
+
+function vitaPanelEvent(className){
+    const targetList = document.querySelectorAll(className);
+
+    targetList.forEach(target => {
+        const type = target.id.split("_")[1];
+        target.addEventListener("click", function(){vitaPanel(type);});
+    })
 }
 
 export { vitaCalcPage };

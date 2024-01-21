@@ -8,7 +8,7 @@ async function loadFile(){
             "/png/" : ["icon.png"],   
         },
         "../js" : {
-            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js", "langTypeHandler.js", "tsc.js", "cc.js"],
+            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js", "langTypeHandler.js", "tsc.js", "cc.js", "vitaMaPanel.js"],
             "/page/" : ["menu.js", "news.js", "profile.js", "costCalc.js", "about.js","vitaCalc.js"],
         },
         "../css" : {
@@ -83,77 +83,77 @@ async function loadFile(){
 
 async function checkImg(file){
     try{
-        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        document.getElementById("loading_text").innerHTML = `Loading and verifing ${file.split("/").pop()}`;
         const responce = await fetch(file);
         if(responce.ok){
-            console.log(`${file.split("/").pop()} successfully loaded`);
+            document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} successfully loaded`;
             return "success";
         }else{
-            console.log(`fail to load ${file.split("/").pop()}`);
+            document.getElementById("loading_text").innerHTML = `fail to load ${file.split("/").pop()}`;
             return "failed";
         }
     }catch (error){
-        console.log(`${file.split("/").pop()} not found`);
+        document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} not found`;
         return "error";
     }
 }
 
 async function loadScript(file){
     try{
-        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        document.getElementById("loading_text").innerHTML = `Loading and verifing ${file.split("/").pop()}`;
         const responce = await fetch(file);
         if(responce.ok){
             let script = document.createElement("script");
             script.src = file;
             script.type = "module";
             document.body.appendChild(script);
-            console.log(`${file.split("/").pop()} successfully loaded`);
+            document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} successfully loaded`;
             return "success";
         }else{
-            console.log(`fail to load ${file.split("/").pop()}`);
+            document.getElementById("loading_text").innerHTML = `fail to load ${file.split("/").pop()}`;
             return "failed";
         }
     }catch (error){
-        console.log(`${file.split("/").pop()} not found`);
+        document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} not found`;
         return "error";
     }
 }
 
 async function loadCss(file){
     try{
-        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        document.getElementById("loading_text").innerHTML = `Loading and verifing ${file.split("/").pop()}`;
         const responce = await fetch(file);
         if(responce.ok){
             let css = document.createElement("link");
             css.rel = "stylesheet";
             css.href = file;
             document.head.appendChild(css);
-            console.log(`${file.split("/").pop()} successfully loaded`);
+            document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} successfully loaded`;
             return "success";
         }else{
-            console.log(`fail to load ${file.split("/").pop()}`);
+            document.getElementById("loading_text").innerHTML = `fail to load ${file.split("/").pop()}`;
             return "failed";
         }
     }catch(error){
-        console.log(`${file.split("/").pop()} not found`);
+        document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} not found`;
         return "error";
     }
 }
 
 async function loadJSON(file){
     try{
-        console.log(`Loading and verifing ${file.split("/").pop()}`);
+        document.getElementById("loading_text").innerHTML = `Loading and verifing ${file.split("/").pop()}`;
         const responce = await fetch(file);
         if(responce.ok){
             const resJson = await responce.json();
-            console.log(`${file.split("/").pop()} successfully loaded`);
+            document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} successfully loaded`;
             return {result : "success" , data: resJson};
         }else{
-            console.log(`fail to load ${file.split("/").pop()}`);
+            document.getElementById("loading_text").innerHTML = `fail to load ${file.split("/").pop()}`;
             return {result : "failed" , data: null};
         }
     }catch(error){
-        console.log(`${file.split("/").pop()} not found`);
+        document.getElementById("loading_text").innerHTML = `${file.split("/").pop()} not found`;
         return {result : "error" , data: null};
     }
 }
