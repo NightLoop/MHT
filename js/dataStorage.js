@@ -35,6 +35,13 @@ const data_storage = {
     ma_cost_list_total_cost: 0,
     ma_intervalID: null,
 
+    vita_unarmed: [],
+    vita_blade: [],
+    vita_sword: [],
+    vita_staff: [],
+    vita_whip: [],
+    vita_throw: [],
+    vita_levi: [],
     vita_total_unarmed: 0,
     vita_total_blade: 0,
     vita_total_sword: 0,

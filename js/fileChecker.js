@@ -8,7 +8,7 @@ async function loadFile(){
             "/png/" : ["icon.png"],   
         },
         "../js" : {
-            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js", "langTypeHandler.js", "tsc.js", "cc.js", "vitaMaPanel.js"],
+            "/" : ["winSizeHandler.js", "dataStorage.js", "langHandler.js", "pageHandler.js", "navBar.js", "editableText.js", "numLimiter.js", "langTypeHandler.js", "tsc.js", "cc.js", "vitaMaPanel.js", "vc.js"],
             "/page/" : ["menu.js", "news.js", "profile.js", "costCalc.js", "about.js","vitaCalc.js"],
         },
         "../css" : {

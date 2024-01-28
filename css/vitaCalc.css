@@ -7,13 +7,9 @@
 
 #vita_ma_section{
     min-width: 0;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     overflow-y: scroll;
-}
-
-#vita_ma_section > div{
-    display: grid;
-    grid-template: 30% 40% 30% / 100%;
 }
 
 #vita_ma_section > div > :first-child{
@@ -51,14 +47,76 @@
 
 
 #ma_selection_panel{
-    width: 75%;
-    height: 50%;
     display: none;
     position: absolute;
     z-index: 10;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -55%);
+    grid-template: 20% 70% 10% / 100%;
     background-color: #FFF7DF;
     border: 1.5px solid #b99566;
+}
+
+#ma_panel_title{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 1.25em;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#ma_panel_list{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.maSelection{
+    padding: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.maSelection:hover{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
+}
+
+#ma_panel_close{
+    display: flex;
+    width : 25%;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    background-color: rgba(185, 149, 102, 0.250);
+}
+
+.vitaMaSectionBar :nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+
+.vitaMaSectionBar :nth-child(2) > div{
+    display: grid;
+    grid-template: 100% / 50% 10% 15% 25%;
+    align-items: center;
+    font-size: 0.9em;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.150);
+}
+
+.vitaMaSectionBar :nth-child(2) > div > :first-child{
+    text-transform: capitalize;
+}
+
+.vitaMaSectionBar :nth-child(2) > div > :nth-child(n+2){
+    text-align: center;
+}
+
+.vitaMaSectionBar :nth-child(2) > div > :nth-child(3){
+    color: rgba(0, 0, 0, 0.300);
+    outline: none;
+}
+
+.vitaMaSectionBar :nth-child(2) > div > :nth-child(3):hover{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.300);
 }

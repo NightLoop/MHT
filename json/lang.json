@@ -1,6 +1,6 @@
 {
     "en" : {
-        "webTitle" : "Meme Heroes Tool v3.9",
+        "webTitle" : "Meme Heroes Tool v4.0",
         "news" : {
             "title" : "News",
 
@@ -10,6 +10,7 @@
             "menuBtnText" : "Menu",
             "updateListHeader" : "--------------------<br/><b>List of updates</b><br/>--------------------",
 
+            "v4.0b" : "Bring back vita calculator for bug test",
             "v3.9b" : "Fixed exp calculator viewport bug",
             "v3.8b" : "Remove vitalia calculator and vitalia planner to rework",
             "v3.7b" : "Beta version on github, fixed exp calculator formula",
@@ -91,7 +92,7 @@
     },
 
     "cn" : {
-        "webTitle" : "暴走英雄坛工具 v3.9",
+        "webTitle" : "暴走英雄坛工具 v4.0",
         "news" : {
             "title" : "公告",
 
@@ -101,6 +102,7 @@
             "menuBtnText" : "目录",
             "updateListHeader" : "--------------------<br/><b>历史版本更新简介</b><br/>--------------------",
 
+            "v4.0b" : "重新上线真元计算器以便排除BUG",
             "v3.9b" : "修复潜能计算器视窗问题",
             "v3.8b" : "移除真元计算器和真元模拟器",
             "v3.7b" : "Github测试版， 修复潜能计算器BUG",
