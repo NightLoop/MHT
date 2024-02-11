@@ -2,6 +2,7 @@ import { data_storage as ds} from "../dataStorage.js";
 import { setEditableText } from "../editableText.js";
 import { setNumLimit } from "../numLimiter.js";
 import { updatePage } from "../pageHandler.js";
+import { vcEventDistributor } from "../vc.js";
 import { ma_diff_list, vitaPanel } from "../vitaMaPanel.js";
 
 function vitaCalcPage(){
@@ -75,6 +76,8 @@ function vitaCalcPage(){
                             </div>
                         </div>
                         <div id="vita_ma_display">
+                            <p>Total Vitalia :<p>
+                            <p id="all_total_vita">0</p>
                         </div>
                         <div id="ma_selection_panel">
                         </div>
@@ -87,6 +90,7 @@ function vitaCalcPage(){
     for (const type in ma_diff_list){
         updateList(type);
     }
+    document.getElementById("all_total_vita").innerHTML = ds.vita_total_all;
 }
 
 function vitaPanelEvent(className){
@@ -108,7 +112,7 @@ function updateList(maType){
                         <p>${maData[`${ma.name}`].name}</p>
                         <p>${maData[`${ma.name}`].diff}</p>
                         <p id="${ma.name}" class="vitaMaLevel" maType="${maType}" min="1" max="600">${ma.level}</p>
-                        <p id="${ma.name}_vita">0</p>
+                        <p id="${ma.name}_${maType}_vita">${ma.vita}</p>
                     </div>
         `;
     }
@@ -116,6 +120,7 @@ function updateList(maType){
     setEditableText(".vitaMaLevel");
     setNumLimit(".vitaMaLevel", "int");
     uploadVitaDataEventDistributor(".vitaMaLevel");
+    vcEventDistributor(".vitaMaLevel");
 }
 
 function uploadVitaData(dataLocation, name, level, vita){
@@ -140,7 +145,7 @@ function uploadVitaDataEventDistributor(className){
             const dataLocation = `vita_${this.getAttribute("maType")}`;
             const name = this.id;
             const level = this.innerHTML;
-            const vita = 123;
+            const vita = document.getElementById(`${name}_${this.getAttribute("maType")}_vita`).innerHTML;
             uploadVitaData(dataLocation, name, level, vita);
         })
     })
