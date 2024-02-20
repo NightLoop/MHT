@@ -17,6 +17,9 @@ function newsPage(){
                         ${lang["updateListHeader"]}
                         </p>
 
+                        <p style="text-align:center;"><b><u>v4.1b</u></b></p>
+                        ${lang["v4.1b"]}
+
                         <p style="text-align:center;"><b><u>v4.0b</u></b></p>
                         ${lang["v4.0b"]}
                     

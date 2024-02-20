@@ -1,6 +1,6 @@
 {
     "en" : {
-        "webTitle" : "Meme Heroes Tool v4.0",
+        "webTitle" : "Meme Heroes Tool v4.1",
         "news" : {
             "title" : "News",
 
@@ -10,6 +10,7 @@
             "menuBtnText" : "Menu",
             "updateListHeader" : "--------------------<br/><b>List of updates</b><br/>--------------------",
 
+            "v4.1b" : "Fixed some bugs on vita calculation, this is the last version on this beta version, will push the new version with new base structure.",
             "v4.0b" : "Bring back vita calculator for bug test",
             "v3.9b" : "Fixed exp calculator viewport bug",
             "v3.8b" : "Remove vitalia calculator and vitalia planner to rework",
@@ -92,7 +93,7 @@
     },
 
     "cn" : {
-        "webTitle" : "暴走英雄坛工具 v4.0",
+        "webTitle" : "暴走英雄坛工具 v4.1",
         "news" : {
             "title" : "公告",
 
@@ -102,6 +103,7 @@
             "menuBtnText" : "目录",
             "updateListHeader" : "--------------------<br/><b>历史版本更新简介</b><br/>--------------------",
 
+            "v4.1b" : "修复真元计算器的BUG，这将会是BETA的最后一版，下一个更新版本将会更换全新的底层代码。",
             "v4.0b" : "重新上线真元计算器以便排除BUG",
             "v3.9b" : "修复潜能计算器视窗问题",
             "v3.8b" : "移除真元计算器和真元模拟器",
