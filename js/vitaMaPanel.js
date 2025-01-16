@@ -69,7 +69,8 @@ const ma_diff_list = {
         advbeggar : { name : "uber art of dragon vanquishing" , diff : 2 },
         advshaolin : { name : "vajra palm" , diff : 1.8 },
         advtoxic : { name : "venom fist" , diff : 1.8 },
-        sixdivine : { name : "six divine pulses" , diff : 2 }
+        sixdivine : { name : "six divine pulses" , diff : 2 },
+        gloompalm : { name : "gloom palm" , diff : 2}
     },
     blade : {
         taichi : { name : "deceitful scimitar art" , diff : 1.1 },
@@ -84,7 +85,8 @@ const ma_diff_list = {
         snowdrink : { name : "snowdrinker scimitar art" , diff : 1.7 },
         adviga : { name : "shadow triflow" , diff : 1.8 },
         cruelblade : { name : "cruelblade scimitar art" , diff : 2 },
-        advblood : { name : "bloodfiend scimitar art" , diff : 1.8 }
+        advblood : { name : "bloodfiend scimitar art" , diff : 1.8 },
+        xblade : { name : "extermination cross blade" , diff : 2 }
     },
     sword : {
         taichi : { name : "tai chi sword art" , diff : 1.5 },
